@@ -13,11 +13,11 @@ class Store:
 
     def add_product(self, product):
         self.products[product.pid] = product
-        print("✅ Product added successfully")
+        print(" Product added successfully")
 
     def view_products(self):
         if not self.products:
-            print("❌ No products available")
+            print(" No products available")
             return
 
         print("\n--- Available Products ---")
@@ -39,7 +39,7 @@ class ShoppingCart:
             del self.items[pid]
             print("🗑️ Item removed from cart")
         else:
-            print("❌ Item not in cart")
+            print(" Item not in cart")
 
     def view_cart(self, store):
         if not self.items:
@@ -85,7 +85,7 @@ class Admin(User):
                 break
 
             else:
-                print("❌ Invalid choice")
+                print(" Invalid choice")
 
 
 # ===================== CUSTOMER =====================
@@ -115,7 +115,7 @@ class Customer(User):
                 if pid in store.products:
                     self.cart.add_to_cart(pid, qty)
                 else:
-                    print("❌ Invalid Product ID")
+                    print(" Invalid Product ID")
 
             elif choice == "3":
                 pid = int(input("Enter Product ID: "))
@@ -126,15 +126,15 @@ class Customer(User):
 
             elif choice == "5":
                 total = self.cart.total_amount(store)
-                print(f"\n💰 Total Bill: ₹{total}")
-                print("✅ Order placed successfully 🎉")
+                print(f"\n Total Bill: ₹{total}")
+                print(" Order placed successfully 🎉")
                 break
 
             elif choice == "6":
                 break
 
             else:
-                print("❌ Invalid choice")
+                print(" Invalid choice")
 
 
 # ===================== MAIN =====================
@@ -159,13 +159,14 @@ def main():
             customer.customer_menu(store)
 
         elif role == "3":
-            print("🙏 Thank you for visiting")
+            print(" Thank you for visiting")
             break
 
         else:
-            print("❌ Invalid option")
+            print(" Invalid option")
 
 
 if __name__ == "__main__":
     main()
+
     
